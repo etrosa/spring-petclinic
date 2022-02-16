@@ -1,4 +1,5 @@
 # syntax=docker/dockerfile:1
+#!/bin/sh
 FROM openjdk:16-alpine3.13
 WORKDIR /app
 COPY .mvn/ .mvn
