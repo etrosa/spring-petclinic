@@ -25,7 +25,7 @@ pipeline {
                 bat 'docker build -t etrosa/petclinic:jenkins .'
             }
         }
-         stage('build') {
+         stage('deploy') {
             steps {
                 // build
                 bat 'docker run -d -p 8080:8080 etrosa/petclinic:jenkins'
