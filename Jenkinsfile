@@ -1,6 +1,8 @@
 pipeline {
     agent any
-    
+    	environment {
+		DOCKERHUB_CREDENTIALS=credentials('docker-hub-etrosa')
+	}
     stages {
         stage('git') {
             steps {
@@ -28,12 +30,9 @@ pipeline {
         }
  
         stage('dockerhub') {
-
-			steps {
-			        withDockerRegistry([ credentialsId: "docker-hub-etrosa", url: "" ]) {
-                                bat  'docker push etrosa/petclinic:latest'
-                                }
-                           }
-		}
+            steps {
+		sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
+                   }
+	}
     }
 }
