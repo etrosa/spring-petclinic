@@ -1,8 +1,5 @@
 pipeline {
     agent any
-    	environment {
-		DOCKERHUB_CREDENTIALS=credentials('docker-hub-etrosa')
-	}
     stages {
         stage('git') {
             steps {
@@ -31,7 +28,7 @@ pipeline {
  
         stage('dockerhub') {
             steps {
-		bat 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
+		bat 'docker login -u etrosa -p 125f0129-f577-431e-b0fb-a5f73d4abbbe'
                    }
 	}
     }
