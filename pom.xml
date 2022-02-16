@@ -11,12 +11,7 @@
     <version>2.6.3</version>
   </parent>
   <name>petclinic</name>
-<repositories>
-  <repository>
-    <id>repo.jenkins-ci.org</id>
-    <url>https://repo.jenkins-ci.org/public/</url>
-  </repository>
-</repositories>
+
   <properties>
 
     <!-- Generic properties -->
@@ -242,22 +237,10 @@
   </licenses>
 
   <repositories>
-    <repository>
-      <id>spring-snapshots</id>
-      <name>Spring Snapshots</name>
-      <url>https://repo.spring.io/snapshot</url>
-      <snapshots>
-        <enabled>true</enabled>
-      </snapshots>
-    </repository>
-    <repository>
-      <id>spring-milestones</id>
-      <name>Spring Milestones</name>
-      <url>https://repo.spring.io/milestone</url>
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
-    </repository>
+  <repository>
+    <id>repo.jenkins-ci.org</id>
+    <url>https://repo.jenkins-ci.org/public/</url>
+  </repository>
   </repositories>
 
   <pluginRepositories>
