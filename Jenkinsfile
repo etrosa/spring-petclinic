@@ -28,7 +28,7 @@ pipeline {
          stage('deploy') {
             steps {
                 // build
-                bat 'docker run -d -p 8080:8080 etrosa/petclinic:jenkins'
+                bat 'docker run etrosa/petclinic:jenkins'
             }
         }
         stage('dhLogin') {
