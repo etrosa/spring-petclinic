@@ -2,27 +2,27 @@ pipeline {
     agent any
 
     stages {
-        stage('checkout') {
+        stage('git') {
             steps {
-                // Get some code from a GitHub repository
+                // get git
                 git url: 'https://github.com/etrosa/spring-petclinic.git', branch: 'main'
             }
         }
         stage('test') {
             steps {
-                // Test the code and publish the results
+                // Test code
                 bat './mvnw test'
             }
         }
          stage('compile') {
             steps {
-                // Compile the code
+                // Compile
                 bat './mvnw clean package'
             }
         }
         stage('build') {
             steps {
-                // Run Maven on a Unix agent.
+                // build
                 bat 'docker build .'
             }
         }
