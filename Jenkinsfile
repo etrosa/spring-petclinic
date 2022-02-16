@@ -1,22 +1,42 @@
 pipeline {
     agent any
-    tools { 
-        maven 'maven: 3.8.4' 
-    }
+
     stages {
-        stage('Compile') {
+        stage('checkout') {
             steps {
-                bat './mvnw package'
+                // Get some code from a GitHub repository
+                git url: 'https://github.com/etrosa/spring-petclinic.git', branch: 'main'
             }
         }
-        stage('Test') {
+        stage('compile') {
             steps {
-                bat './mvnw test'
+                // Compile the code
+                sh './mvnw compile'
             }
         }
-        stage('Package') {
+        stage('test') {
             steps {
-                bat 'docker buid .'
+                // Test the code and publish the results
+                sh './mvnw test'
+            }
+            post {
+                always {
+                    junit '*target/surefire-reports/TEST-*.xml'
+                }
+            }
+        }
+        stage('build') {
+            steps {
+                // Run Maven on a Unix agent.
+                sh './mvnw clean package'
+            }
+
+            post {
+                // If Maven was able to run the tests, even if some of the test
+                // failed, record the test results and archive the jar file.
+                success {
+                    archiveArtifacts 'target/*.jar'
+                }
             }
         }
     }
