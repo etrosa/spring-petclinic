@@ -11,7 +11,7 @@ pipeline {
         stage('compile') {
             steps {
                 // Compile the code
-                sh './mvnw compile'
+                sh 'docker run .'
             }
         }
         stage('test') {
