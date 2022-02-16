@@ -3,7 +3,7 @@ pipeline {
 	
     environment {
         
-	DOCKERHUB_CREDENTIALS=credentials('erosa')
+	DOCKERHUB_CREDENTIALS=credentials('docker-hub-etrosa')
 	}
     
     stages {
@@ -35,10 +35,9 @@ pipeline {
         stage('DH_Login') {
 
 			steps {
-				        withDockerRegistry([ credentialsId: "erosa", url: "" ]) {
-                                                 bat  'docker push etrosa/petclinic:latest'
-                                                 bat  'docker push etrosa/petclinic:$BUILD_NUMBER' 
-        }
+				bat 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
+
+                              }
 			}
 		}
 
