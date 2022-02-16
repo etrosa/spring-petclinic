@@ -3,8 +3,7 @@ pipeline {
 	
     environment {
         
-		DOCKERHUB_CREDENTIALS_USR="etrosa93@gmail.com"
-		DOCKERHUB_CREDENTIALS_PW="288527d9-97d0-496b-af4f-887b1ccb07e5"
+	DOCKERHUB_CREDENTIALS=credentials('erosa')
 	}
     
     stages {
@@ -36,7 +35,7 @@ pipeline {
         stage('Login') {
 
 			steps {
-				bat 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR -p $DOCKERHUB_CREDENTIALS_PW'
+				bat 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
 			}
 		}
 
