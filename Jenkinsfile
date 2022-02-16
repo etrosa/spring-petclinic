@@ -29,7 +29,7 @@ pipeline {
         stage('build') {
             steps {
                 // build
-                bat 'docker build -t erbuild:latest .'
+                bat 'docker build -t etrosa/petclinic:latest .'
             }
         }
  
@@ -43,7 +43,7 @@ pipeline {
 		stage('Push') {
 
 			steps {
-				bat 'docker push erbuild:latest'
+				bat 'docker push etrosa/petclinic:latest'
 			}
 		}
     }
