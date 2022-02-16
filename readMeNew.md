@@ -39,5 +39,5 @@
 
 Issues encountered:
 - Jenkins credential manager keyword will not get called, forcing inline login
-- Jenkins builds and publishes a new image to dockerhub, however, the image is pullable but does not run and results in the following error"
+- Jenkins builds and publishes a new image to dockerhub, however, the image is pullable but does not run and results in the following error: "standard_init_linux.go:228: exec user process caused: no such file or directory"
 
