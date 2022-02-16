@@ -3,6 +3,6 @@ FROM openjdk:16-alpine3.13
 WORKDIR /app
 COPY .mvn/ .mvn
 COPY mvnw pom.xml ./
-CMD ["./mvnw", "dependency:go-offline"] /bin/sh
+RUN ["./mvnw", "dependency:go-offline"]
 COPY src ./src
-CMD ["./mvnw", "spring-boot:run"] /bin/sh
+RUN ["./mvnw", "spring-boot:run"]
