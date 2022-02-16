@@ -19,11 +19,6 @@ pipeline {
                 // Test the code and publish the results
                 sh './mvnw test'
             }
-            post {
-                always {
-                    junit '*target/surefire-reports/TEST-*.xml'
-                }
-            }
         }
         stage('build') {
             steps {
