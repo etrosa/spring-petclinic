@@ -23,7 +23,7 @@ pipeline {
         stage('build') {
             steps {
                 // Run Maven on a Unix agent.
-                bat 'docker run .'
+                bat 'docker build .'
             }
         }
     }
