@@ -29,10 +29,5 @@ pipeline {
 		bat 'docker push etrosa/petclinic:latest'
                    }
 	}
-          stage('dhDelete') {
-            steps {
-                  bat "docker rmi etrosa/petclinic:latest:latest"
-                   }
-	}
-    }
+
 }
