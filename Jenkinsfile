@@ -32,8 +32,8 @@ pipeline {
 			steps {
 			        withDockerRegistry([ credentialsId: "docker-hub-etrosa", url: "" ]) {
                                 bat  'docker push etrosa/petclinic:latest'
-
-                              }
-			}
+                                }
+                           }
+		}
     }
 }
