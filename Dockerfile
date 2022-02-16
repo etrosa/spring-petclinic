@@ -1,1 +1,0 @@
-# syntax=docker/dockerfile:1FROM openjdk:16-alpine3.13WORKDIR /appCOPY .mvn/ .mvnCOPY mvnw pom.xml ./RUN ./mvnw dependency:go-offlineCOPY src ./srcCMD ["./mvnw", "spring-boot:run"]
