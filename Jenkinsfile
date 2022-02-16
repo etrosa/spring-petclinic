@@ -32,14 +32,14 @@ pipeline {
             }
         }
  
-        stage('Login') {
+        stage('DH_Login') {
 
 			steps {
 				bat 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
 			}
 		}
 
-		stage('Push') {
+	stage('DH_Push') {
 
 			steps {
 				bat 'docker push etrosa/petclinic:latest'
