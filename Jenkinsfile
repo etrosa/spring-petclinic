@@ -26,9 +26,14 @@ pipeline {
             }
         }
  
-        stage('dockerhub') {
+        stage('dhLogin') {
             steps {
 		bat 'docker login -u etrosa -p 125f0129-f577-431e-b0fb-a5f73d4abbbe'
+                   }
+	}
+         stage('dhPush') {
+            steps {
+		bat 'docker push etrosa/petclinic:latest'
                    }
 	}
     }
