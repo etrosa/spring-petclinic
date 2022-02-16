@@ -29,5 +29,5 @@ pipeline {
 		bat 'docker push etrosa/petclinic:latest'
                    }
 	}
-
+    }
 }
