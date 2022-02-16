@@ -37,7 +37,7 @@
 - Run the pulled docker image setting the port to 8080:8080
 - docker run -p 8080:8080 etrosa/petclinic:latest
 
-Issues encountered:
+## Current Issues:
 - Jenkins credential manager keyword will not get called, forcing inline login
 - Jenkins builds and publishes a new image to dockerhub, however, the image is pullable but does not run and results in the following error: "standard_init_linux.go:228: exec user process caused: no such file or directory"
 
