@@ -32,6 +32,7 @@
 - Make sure to check timestamps for updated images
 - Prune local docker images and pull the new image from docker hub, since docker desktop for windows can take a bit to register new images
 - docker image prune
+- docker pull etrosa/petclinic:latest
 
 ## Step 9 Run the new image
 - Run the pulled docker image setting the port to 8080:8080
