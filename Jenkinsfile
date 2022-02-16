@@ -35,7 +35,10 @@ pipeline {
         stage('DH_Login') {
 
 			steps {
-				bat 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
+				        withDockerRegistry([ credentialsId: "erosa", url: "" ]) {
+                                                 bat  'docker push etrosa/petclinic:latest'
+                                                 bat  'docker push etrosa/petclinic:$BUILD_NUMBER' 
+        }
 			}
 		}
 
