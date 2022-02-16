@@ -14,6 +14,7 @@
 - Add maven build command
 - Add dependencies using maven, mavenCentral() added to pom.xml
 - Add maven test command
+- Optional test: pull repo with new Dockerfile, and run the "docker build ." inside the directory where the Dockerfile is. Then docker run -d -p 8080:8080 imageID/TagName to test whether the Dockerfile works
 
 ## Step 4 Setup Jenkinsfile
 - Setup a git pull
