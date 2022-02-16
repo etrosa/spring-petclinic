@@ -13,11 +13,6 @@ pipeline {
                 // Test code
                 bat './mvnw test'
             }
-            post {
-                always {
-                    junit 'target/surefire-reports/*.xml'
-                }
-            }
         }
          stage('compile') {
             steps {
