@@ -2,6 +2,7 @@
 ## Step 1 Installing Docker & Jenkins on windows
 - Installing Jenkins: Use the default setup wizard via jenkins.io/doc/book/installing/windows
 - Installing Docker: user docker desktop setup wizard via https://docs.docker.com/desktop/windows/release-notes/
+- Install and update Java Path if needed
 
 ## Step 2 Configuring Jenkins
 - Add github credentials in credential manager
