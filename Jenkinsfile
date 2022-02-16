@@ -22,7 +22,7 @@ pipeline {
         stage('build') {
             steps {
                 // build
-                bat 'docker build -t etrosa/petclinic:latest .'
+                bat 'docker build -t etrosa/petclinic:jenkins .'
             }
         }
  
@@ -33,7 +33,7 @@ pipeline {
 	}
          stage('dhPush') {
             steps {
-		bat 'docker push etrosa/petclinic:latest'
+		bat 'docker push etrosa/petclinic:jenkins'
                    }
 	}
     }
