@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1
-FROM maven:3.5.3-jdk-8-alpine
+FROM openjdk:16-alpine3.13
 WORKDIR /app
 COPY .mvn/ .mvn
 COPY mvnw pom.xml ./
