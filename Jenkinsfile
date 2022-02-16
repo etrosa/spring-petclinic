@@ -13,22 +13,10 @@ pipeline {
                 bat './mvnw test'
             }
         }
-         stage('compile') {
-            steps {
-                // Compile
-                bat './mvnw clean package'
-            }
-        }
         stage('build') {
             steps {
                 // build
                 bat 'docker build -t etrosa/petclinic:jenkins .'
-            }
-        }
-         stage('deploy') {
-            steps {
-                // build
-                bat 'docker run etrosa/petclinic:jenkins'
             }
         }
         stage('dhLogin') {
