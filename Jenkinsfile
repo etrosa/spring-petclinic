@@ -16,7 +16,7 @@ pipeline {
         stage('build') {
             steps {
                 // build
-                bat 'docker build -t etrosa/petclinic:windowpain .'
+                bat 'docker build -t etrosa/petclinic:latest .'
             }
         }
         stage('dhLogin') {
@@ -26,7 +26,12 @@ pipeline {
 	}
          stage('dhPush') {
             steps {
-		bat 'docker push etrosa/petclinic:windowpain'
+		bat 'docker push etrosa/petclinic:latest'
+                   }
+	}
+          stage('dhDelete') {
+            steps {
+                  bat "docker rmi etrosa/petclinic:latest:latest"
                    }
 	}
     }
