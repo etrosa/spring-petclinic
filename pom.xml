@@ -11,7 +11,12 @@
     <version>2.6.3</version>
   </parent>
   <name>petclinic</name>
-
+<repositories>
+  <repository>
+    <id>repo.jenkins-ci.org</id>
+    <url>https://repo.jenkins-ci.org/public/</url>
+  </repository>
+</repositories>
   <properties>
 
     <!-- Generic properties -->
